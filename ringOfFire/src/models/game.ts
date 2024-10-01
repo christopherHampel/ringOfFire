@@ -3,6 +3,8 @@ export class Game {
     public stack: string[] = [];
     public playedCards: string[] = [];
     public currentPlayer: number = 0;
+    public pickCardAnimation = false;
+    public currentCard: string | undefined = '';
 
     constructor() {
         for(let i = 1; i < 14; i++) {
@@ -14,6 +16,18 @@ export class Game {
     
         shuffle(this.stack);
     }
+
+        // Funktion zum Konvertieren des Game-Objekts in ein JSON-Objekt
+        public toJson() {
+            return {
+                players: this.players,
+                stack: this.stack,
+                playedCards: this.playedCards,
+                currentPlayer: this.currentPlayer,
+                pickCardAnimation: this.pickCardAnimation,
+                currentCard: this.currentCard,
+            };
+        }
 }
 
 function shuffle(array:string[]) {

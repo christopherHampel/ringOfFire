@@ -34,12 +34,12 @@ export class GameInfoComponent {
 
   ngOnChanges(): void {
     if(this.card) {
-      console.log('Current Card is', this.card);
+      // console.log('Current Card is', this.card);
       let cardNumberWithPng = this.card.split('_',)[1];
       let cardNumber = +cardNumberWithPng.split('.')[0];
       this.title = this.cardAction[cardNumber].title;
       this.description = this.cardAction[cardNumber].description;
-      console.log(this.title, this.description);
+      // console.log(this.title, this.description);
     }
   }
 }
